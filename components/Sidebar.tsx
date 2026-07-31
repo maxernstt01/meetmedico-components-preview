@@ -94,7 +94,10 @@ export function Sidebar() {
             activeKey={activeKey}
             onSelect={(key) => {
               setIsOpen(false);
-              router.push(`/components/${key}`);
+              // All components now live on one scrollable page - navigate
+              // there and jump straight to that component's anchor (#slug),
+              // whether we're already on /components or coming from elsewhere.
+              router.push(`/components#${key}`);
             }}
           />
         </div>
