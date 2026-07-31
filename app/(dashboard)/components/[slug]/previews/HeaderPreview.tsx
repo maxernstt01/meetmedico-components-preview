@@ -25,7 +25,7 @@ export default function Preview() {
         <Header
           eyebrowTags={[
             { key: 'category', label: 'Category' },
-            { key: 'tag', label: 'Tag' },
+            { key: 'tag', label: 'Tag', tone: 'secondary' },
             { key: 'type', label: 'Type' },
           ]}
           title="FREE WORKSHOP - Strategies to Learn Medical Spanish That Fit Your Schedule"
@@ -89,11 +89,11 @@ export default function Example() {
         descriptionColor="var(--warning-600)"
       />
 
-      {/* Tags + title + meta row */}
+      {/* Tags + title + meta row. Tag tone: 'neutral' (default) | 'secondary' */}
       <Header
         eyebrowTags={[
           { key: 'category', label: 'Category' },
-          { key: 'tag', label: 'Tag' },
+          { key: 'tag', label: 'Tag', tone: 'secondary' },
           { key: 'type', label: 'Type' },
         ]}
         title="FREE WORKSHOP - Strategies to Learn Medical Spanish That Fit Your Schedule"

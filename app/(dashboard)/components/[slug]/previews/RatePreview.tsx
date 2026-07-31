@@ -31,6 +31,9 @@ export default function Preview() {
         <span>{rateValue} / 5</span>
       </div>
       <Rate variant="badge" value={3.6} />
+      <div style={{ display: 'flex', gap: 'var(--spacing-space-16)', alignItems: 'center' }}>
+        <Rate defaultValue={2} disabled />
+      </div>
     </div>
   );
 }
@@ -56,6 +59,9 @@ export default function Example() {
 
       {/* Read-only badge showing a fractional average rating */}
       <Rate variant="badge" value={3.6} />
+
+      {/* Disabled: not clickable */}
+      <Rate defaultValue={2} disabled />
     </>
   );
 }`;

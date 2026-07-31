@@ -29,6 +29,13 @@ export default function Preview() {
         maxLength={500}
       />
       <TextArea label="Label" required placeholder="Add description here" maxLength={500} size="small" />
+      <TextArea
+        label="Label"
+        placeholder="Add description here"
+        maxLength={500}
+        disabled
+        defaultValue="This field is disabled."
+      />
     </div>
   );
 }
@@ -55,6 +62,13 @@ export default function Example() {
         maxLength={500}
       />
       <TextArea label="Label" required placeholder="Add description here" maxLength={500} size="small" />
+      <TextArea
+        label="Label"
+        placeholder="Add description here"
+        maxLength={500}
+        disabled
+        defaultValue="This field is disabled."
+      />
     </>
   );
 }`;

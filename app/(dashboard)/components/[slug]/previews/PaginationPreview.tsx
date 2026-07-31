@@ -27,6 +27,8 @@ export default function Preview() {
       <Pagination total={102} defaultCurrent={2} boundaryCount={3} prevNext="button" />
       <Pagination total={102} defaultCurrent={2} boundaryCount={3} prevNext="icon" />
       <Pagination total={102} defaultCurrent={1} boundaryCount={1} siblingCount={0} />
+      <Pagination total={102} defaultCurrent={2} boundaryCount={3} align="center" />
+      <Pagination total={102} defaultCurrent={2} boundaryCount={3} align="right" />
     </div>
   );
 }
@@ -54,6 +56,9 @@ export default function Example() {
       <Pagination total={102} defaultCurrent={2} boundaryCount={3} prevNext="icon" />
       {/* Compact layout for narrow screens */}
       <Pagination total={102} defaultCurrent={1} boundaryCount={1} siblingCount={0} />
+      {/* align: 'left' (default) | 'center' | 'right' */}
+      <Pagination total={102} defaultCurrent={2} boundaryCount={3} align="center" />
+      <Pagination total={102} defaultCurrent={2} boundaryCount={3} align="right" />
     </>
   );
 }`;

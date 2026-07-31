@@ -28,6 +28,12 @@ const stepsIconItems: StepItem[] = [
   { key: 'done', title: 'Done', icon: CheckmarkCircle02Icon },
 ];
 
+const stepsErrorItems: StepItem[] = [
+  { key: 'finished', title: 'Finished', description: 'This is a content.' },
+  { key: 'failed', title: 'Failed', description: 'This is a content.', status: 'error' },
+  { key: 'waiting', title: 'Waiting', description: 'This is a content.' },
+];
+
 export default function Preview() {
   const [current, setCurrent] = useState(0);
 
@@ -39,9 +45,15 @@ export default function Preview() {
 
       <Steps items={stepsIconItems} current={1} />
 
+      <Steps items={stepsErrorItems} current={2} />
+
       <div>
         <Steps items={stepsItems} current={current} onChange={setCurrent} />
         <span style={{ fontSize: 12, color: 'var(--neutral-500)' }}>Clickable, current: {current}</span>
+      </div>
+
+      <div style={{ height: 220 }}>
+        <Steps items={stepsItems} current={1} direction="vertical" />
       </div>
     </div>
   );
@@ -68,6 +80,13 @@ const stepsIconItems: StepItem[] = [
   { key: 'done', title: 'Done', icon: CheckmarkCircle02Icon },
 ];
 
+// A step's own status: 'error' overrides the computed wait/process/finished status
+const stepsErrorItems: StepItem[] = [
+  { key: 'finished', title: 'Finished', description: 'This is a content.' },
+  { key: 'failed', title: 'Failed', description: 'This is a content.', status: 'error' },
+  { key: 'waiting', title: 'Waiting', description: 'This is a content.' },
+];
+
 export default function Example() {
   const [current, setCurrent] = useState(0);
 
@@ -82,8 +101,16 @@ export default function Example() {
       {/* Custom per-step icons instead of numbers */}
       <Steps items={stepsIconItems} current={1} />
 
+      {/* A step item can be flagged status: 'error' to show a failed state */}
+      <Steps items={stepsErrorItems} current={2} />
+
       {/* Clickable: onChange fires when a non-disabled step is clicked */}
       <Steps items={stepsItems} current={current} onChange={setCurrent} />
+
+      {/* direction: 'vertical' - the wrapper needs a height/width to look right */}
+      <div style={{ height: 220 }}>
+        <Steps items={stepsItems} current={1} direction="vertical" />
+      </div>
     </>
   );
 }`;

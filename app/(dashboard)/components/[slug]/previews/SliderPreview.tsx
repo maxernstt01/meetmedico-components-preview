@@ -50,6 +50,24 @@ export default function Preview() {
       <div style={{ maxWidth: 400 }}>
         <Slider defaultValue={40} disabled />
       </div>
+
+      <div style={{ maxWidth: 400 }}>
+        <Slider defaultValue={50} tooltip={false} />
+        <span style={{ fontSize: 12, color: 'var(--neutral-500)' }}>tooltip=false - no tooltip on drag/focus</span>
+      </div>
+
+      <div style={{ display: 'flex', gap: 'var(--spacing-space-24)' }}>
+        <Slider direction="vertical" defaultValue={40} />
+        <Slider
+          direction="vertical"
+          range
+          defaultValue={[20, 60]}
+          marks={[
+            { value: 0, label: '0' },
+            { value: 100, label: '100' },
+          ]}
+        />
+      </div>
     </div>
   );
 }
@@ -89,6 +107,21 @@ export default function Example() {
 
       {/* Disabled */}
       <Slider defaultValue={40} disabled />
+
+      {/* tooltip: false suppresses the value tooltip that otherwise appears while dragging/focused */}
+      <Slider defaultValue={50} tooltip={false} />
+
+      {/* direction: 'vertical' - the wrapper needs a fixed height */}
+      <Slider direction="vertical" defaultValue={40} />
+      <Slider
+        direction="vertical"
+        range
+        defaultValue={[20, 60]}
+        marks={[
+          { value: 0, label: '0' },
+          { value: 100, label: '100' },
+        ]}
+      />
     </>
   );
 }`;

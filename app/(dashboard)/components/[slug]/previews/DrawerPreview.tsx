@@ -26,6 +26,8 @@ export default function Preview() {
   });
   const [withActions, setWithActions] = useState(false);
   const [dimmedOpen, setDimmedOpen] = useState(false);
+  const [noMaskOpen, setNoMaskOpen] = useState(false);
+  const [blurMaskOpen, setBlurMaskOpen] = useState(false);
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-space-16)' }}>
@@ -44,6 +46,12 @@ export default function Preview() {
         </Button>
         <Button variant="secondary" onClick={() => setDimmedOpen(true)}>
           Open Dimmed Mask
+        </Button>
+        <Button variant="secondary" onClick={() => setNoMaskOpen(true)}>
+          Open No Mask
+        </Button>
+        <Button variant="secondary" onClick={() => setBlurMaskOpen(true)}>
+          Open Blurred Mask
         </Button>
       </div>
 
@@ -69,6 +77,14 @@ export default function Preview() {
       <Drawer open={dimmedOpen} onClose={() => setDimmedOpen(false)} title="Dimmed Mask" mask="dimmed">
         Some contents...
       </Drawer>
+
+      <Drawer open={noMaskOpen} onClose={() => setNoMaskOpen(false)} title="No Mask" mask="none">
+        Some contents...
+      </Drawer>
+
+      <Drawer open={blurMaskOpen} onClose={() => setBlurMaskOpen(false)} title="Blurred Mask" mask="blur">
+        Some contents...
+      </Drawer>
     </div>
   );
 }
@@ -84,6 +100,8 @@ export default function Example() {
   });
   const [withActions, setWithActions] = useState(false);
   const [dimmedOpen, setDimmedOpen] = useState(false);
+  const [noMaskOpen, setNoMaskOpen] = useState(false);
+  const [blurMaskOpen, setBlurMaskOpen] = useState(false);
 
   return (
     <>
@@ -95,6 +113,12 @@ export default function Example() {
       </Button>
       <Button variant="secondary" onClick={() => setDimmedOpen(true)}>
         Open Dimmed Mask
+      </Button>
+      <Button variant="secondary" onClick={() => setNoMaskOpen(true)}>
+        Open No Mask
+      </Button>
+      <Button variant="secondary" onClick={() => setBlurMaskOpen(true)}>
+        Open Blurred Mask
       </Button>
 
       <Drawer

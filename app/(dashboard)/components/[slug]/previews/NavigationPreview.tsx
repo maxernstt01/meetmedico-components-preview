@@ -55,6 +55,12 @@ const navVerticalItems: NavigationItem[] = [
     ],
   },
   { key: 'nav-three', label: 'Navigation Three', icon: UserIcon, disabled: true },
+  {
+    key: 'group-more',
+    label: 'More',
+    type: 'group',
+    children: [{ key: 'nav-four', label: 'Navigation Four' }],
+  },
 ];
 
 export default function Preview() {
@@ -75,6 +81,19 @@ export default function Preview() {
                 <Button variant="primary">Login</Button>
               </>
             }
+          />
+        </div>
+      </div>
+
+      <div style={{ border: '1px solid var(--neutral-100)', borderRadius: 'var(--radius-border-radius-8)' }}>
+        <div style={{ padding: 'var(--spacing-space-16)' }}>
+          <Navigation
+            items={navHorizontalItems}
+            mode="horizontal"
+            activeKey="home"
+            logo={<span style={{ fontWeight: 700 }}>MeetMedico</span>}
+            logoPosition="center"
+            menuAlign="end"
           />
         </div>
       </div>
@@ -140,6 +159,12 @@ const navVerticalItems: NavigationItem[] = [
     ],
   },
   { key: 'nav-three', label: 'Navigation Three', icon: UserIcon, disabled: true },
+  {
+    key: 'group-more',
+    label: 'More',
+    type: 'group',
+    children: [{ key: 'nav-four', label: 'Navigation Four' }],
+  },
 ];
 
 export default function Example() {
@@ -161,7 +186,17 @@ export default function Example() {
         }
       />
 
-      {/* Vertical — accordion submenu, nested levels */}
+      {/* Horizontal — logoPosition: 'left' (default) | 'center'; menuAlign: 'start' (default) | 'center' | 'end' */}
+      <Navigation
+        items={navHorizontalItems}
+        mode="horizontal"
+        activeKey="home"
+        logo={<span>MeetMedico</span>}
+        logoPosition="center"
+        menuAlign="end"
+      />
+
+      {/* Vertical — accordion submenu, nested levels, plus a 'group' item type */}
       <Navigation items={navVerticalItems} mode="vertical" defaultOpenKeys={['nav-two']} accordion />
 
       {/* Vertical — collapsible icon-only rail */}

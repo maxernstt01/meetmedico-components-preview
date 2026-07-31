@@ -19,6 +19,8 @@ export default function Preview() {
   const [successOpen, setSuccessOpen] = useState(false);
   const [warningOpen, setWarningOpen] = useState(false);
   const [errorOpen, setErrorOpen] = useState(false);
+  const [noMaskOpen, setNoMaskOpen] = useState(false);
+  const [blurMaskOpen, setBlurMaskOpen] = useState(false);
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--spacing-space-16)' }}>
@@ -43,6 +45,12 @@ export default function Preview() {
         </Button>
         <Button variant="primary" onClick={() => setErrorOpen(true)}>
           Error
+        </Button>
+        <Button variant="primary" onClick={() => setNoMaskOpen(true)}>
+          No Mask
+        </Button>
+        <Button variant="primary" onClick={() => setBlurMaskOpen(true)}>
+          Blur Mask
         </Button>
       </div>
 
@@ -123,6 +131,28 @@ export default function Preview() {
       >
         This modal will be destroyed automatically after 1 second.
       </Modal>
+
+      <Modal
+        open={noMaskOpen}
+        onClose={() => setNoMaskOpen(false)}
+        onOk={() => setNoMaskOpen(false)}
+        onCancel={() => setNoMaskOpen(false)}
+        mask="none"
+        title="No Mask"
+      >
+        This modal renders without a backdrop overlay (mask="none").
+      </Modal>
+
+      <Modal
+        open={blurMaskOpen}
+        onClose={() => setBlurMaskOpen(false)}
+        onOk={() => setBlurMaskOpen(false)}
+        onCancel={() => setBlurMaskOpen(false)}
+        mask="blur"
+        title="Blur Mask"
+      >
+        This modal blurs the content behind it (mask="blur").
+      </Modal>
     </div>
   );
 }
@@ -133,6 +163,8 @@ import { Modal, Button } from 'design-system';
 export default function Example() {
   const [open, setOpen] = useState(false);
   const [confirmOpen, setConfirmOpen] = useState(false);
+  const [noMaskOpen, setNoMaskOpen] = useState(false);
+  const [blurMaskOpen, setBlurMaskOpen] = useState(false);
 
   return (
     <>
@@ -164,6 +196,37 @@ export default function Example() {
         title="Confirm"
       >
         Bla bla...
+      </Modal>
+
+      {/* mask: 'dimmed' (default) | 'blur' | 'none' - controls the backdrop overlay */}
+      <Button variant="primary" onClick={() => setNoMaskOpen(true)}>
+        No Mask
+      </Button>
+
+      <Modal
+        open={noMaskOpen}
+        onClose={() => setNoMaskOpen(false)}
+        onOk={() => setNoMaskOpen(false)}
+        onCancel={() => setNoMaskOpen(false)}
+        mask="none"
+        title="No Mask"
+      >
+        This modal renders without a backdrop overlay (mask="none").
+      </Modal>
+
+      <Button variant="primary" onClick={() => setBlurMaskOpen(true)}>
+        Blur Mask
+      </Button>
+
+      <Modal
+        open={blurMaskOpen}
+        onClose={() => setBlurMaskOpen(false)}
+        onOk={() => setBlurMaskOpen(false)}
+        onCancel={() => setBlurMaskOpen(false)}
+        mask="blur"
+        title="Blur Mask"
+      >
+        This modal blurs the content behind it (mask="blur").
       </Modal>
     </>
   );

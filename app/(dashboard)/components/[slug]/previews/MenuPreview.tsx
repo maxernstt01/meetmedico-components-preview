@@ -13,7 +13,7 @@ import Settings01Icon from 'design-system/src/assets/icons/Primary Button/Settin
 
 export default function Preview() {
   return (
-    <div style={{ display: 'flex', gap: 'var(--spacing-space-24)' }}>
+    <div style={{ display: 'flex', gap: 'var(--spacing-space-24)', flexWrap: 'wrap' }}>
       <Menu
         items={[
           { key: 'edit', label: 'Edit', icon: Settings01Icon },
@@ -26,6 +26,22 @@ export default function Preview() {
       <Menu
         trigger={<Button variant="secondary">Actions</Button>}
         placement="bottomLeft"
+        items={[
+          { key: 'edit', label: 'Edit' },
+          { key: 'delete', label: 'Delete', danger: true },
+        ]}
+      />
+      <Menu
+        trigger={<Button variant="secondary">Top Left</Button>}
+        placement="topLeft"
+        items={[
+          { key: 'edit', label: 'Edit' },
+          { key: 'delete', label: 'Delete', danger: true },
+        ]}
+      />
+      <Menu
+        trigger={<Button variant="secondary">Top Right</Button>}
+        placement="topRight"
         items={[
           { key: 'edit', label: 'Edit' },
           { key: 'delete', label: 'Delete', danger: true },
@@ -55,6 +71,24 @@ export default function Example() {
       <Menu
         trigger={<button type="button">Actions</button>}
         placement="bottomLeft"
+        items={[
+          { key: 'edit', label: 'Edit' },
+          { key: 'delete', label: 'Delete', danger: true },
+        ]}
+      />
+
+      {/* placement: 'bottomLeft' | 'bottomRight' (default) | 'topLeft' | 'topRight' */}
+      <Menu
+        trigger={<button type="button">Top Left</button>}
+        placement="topLeft"
+        items={[
+          { key: 'edit', label: 'Edit' },
+          { key: 'delete', label: 'Delete', danger: true },
+        ]}
+      />
+      <Menu
+        trigger={<button type="button">Top Right</button>}
+        placement="topRight"
         items={[
           { key: 'edit', label: 'Edit' },
           { key: 'delete', label: 'Delete', danger: true },

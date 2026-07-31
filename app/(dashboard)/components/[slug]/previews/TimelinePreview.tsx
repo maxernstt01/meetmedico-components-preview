@@ -31,6 +31,7 @@ export default function Preview() {
       <Timeline items={timelineItems} placement="center" />
       <Timeline items={timelineStatusItems} />
       <Timeline items={timelineItems.slice(0, 3)} pending="Recording..." />
+      <Timeline items={timelineStatusItems} orientation="horizontal" />
     </div>
   );
 }
@@ -63,6 +64,8 @@ export default function Example() {
       <Timeline items={timelineStatusItems} />
       {/* Pending / in-progress trailing node */}
       <Timeline items={timelineItems.slice(0, 3)} pending="Recording..." />
+      {/* Horizontal orientation */}
+      <Timeline items={timelineStatusItems} orientation="horizontal" />
     </>
   );
 }`;

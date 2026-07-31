@@ -41,6 +41,31 @@ export default function Preview() {
           Hoverable and clickable (keyboard-accessible too).
         </Card>
       </div>
+      <div style={{ width: 280 }}>
+        <Card variant="filled" title="Filled">
+          Tinted background, no border or shadow.
+        </Card>
+      </div>
+      <div style={{ width: 280 }}>
+        <Card variant="outlined" bordered={false} title="Borderless">
+          variant="outlined" with bordered={false} removes the border.
+        </Card>
+      </div>
+      <div style={{ width: 280 }}>
+        <Card padding="none" title="Padding: none">
+          No internal body padding.
+        </Card>
+      </div>
+      <div style={{ width: 280 }}>
+        <Card padding="sm" title="Padding: sm">
+          Compact body padding.
+        </Card>
+      </div>
+      <div style={{ width: 280 }}>
+        <Card padding="lg" title="Padding: lg">
+          Spacious body padding.
+        </Card>
+      </div>
     </div>
   );
 }
@@ -74,6 +99,27 @@ export default function Example() {
       {/* hoverable + onClick makes it a real interactive element (role="button") */}
       <Card hoverable onClick={() => console.log('clicked')}>
         Hoverable and clickable.
+      </Card>
+
+      {/* variant="filled": tinted background, no border or shadow */}
+      <Card variant="filled" title="Filled">
+        Tinted background, no border or shadow.
+      </Card>
+
+      {/* bordered={false}: removes the border regardless of variant */}
+      <Card variant="outlined" bordered={false} title="Borderless">
+        variant="outlined" with bordered={false} removes the border.
+      </Card>
+
+      {/* padding: 'none' | 'sm' | 'md' (default) | 'lg' */}
+      <Card padding="none" title="Padding: none">
+        No internal body padding.
+      </Card>
+      <Card padding="sm" title="Padding: sm">
+        Compact body padding.
+      </Card>
+      <Card padding="lg" title="Padding: lg">
+        Spacious body padding.
       </Card>
     </>
   );

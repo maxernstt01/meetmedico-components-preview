@@ -16,6 +16,7 @@ export default function Preview() {
       <TimePicker label="Time" required helperText="Use 24-hour format" />
       <TimePicker label="Time" required error helperText="Please select a valid time" />
       <TimePicker label="Time" required size="small" />
+      <TimePicker label="Time" disabled defaultValue="09:00" />
     </div>
   );
 }
@@ -29,6 +30,7 @@ export default function Example() {
       <TimePicker label="Time" required helperText="Use 24-hour format" />
       <TimePicker label="Time" required error helperText="Please select a valid time" />
       <TimePicker label="Time" required size="small" />
+      <TimePicker label="Time" disabled defaultValue="09:00" />
     </>
   );
 }`;

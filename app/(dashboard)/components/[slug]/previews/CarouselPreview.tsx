@@ -71,6 +71,26 @@ export default function Preview() {
           </Carousel>
         </div>
       </div>
+      <div>
+        <p style={{ margin: '0 0 8px', fontSize: 13, color: 'var(--neutral-500)' }}>
+          Dots only, positioned left
+        </p>
+        <div style={{ maxWidth: 480 }}>
+          <Carousel showArrows={false} showDots dotPosition="left">
+            {slides()}
+          </Carousel>
+        </div>
+      </div>
+      <div>
+        <p style={{ margin: '0 0 8px', fontSize: 13, color: 'var(--neutral-500)' }}>
+          Dots only, positioned right
+        </p>
+        <div style={{ maxWidth: 480 }}>
+          <Carousel showArrows={false} showDots dotPosition="right">
+            {slides()}
+          </Carousel>
+        </div>
+      </div>
     </div>
   );
 }
@@ -117,6 +137,14 @@ export default function Example() {
 
       {/* Autoplay, pauses on hover */}
       <Carousel autoplay autoplayInterval={2500}>
+        {slides()}
+      </Carousel>
+
+      {/* dotPosition: 'top' | 'bottom' (default) | 'left' | 'right' */}
+      <Carousel showArrows={false} showDots dotPosition="left">
+        {slides()}
+      </Carousel>
+      <Carousel showArrows={false} showDots dotPosition="right">
         {slides()}
       </Carousel>
     </>

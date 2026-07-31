@@ -19,6 +19,7 @@ export default function Preview() {
         <Label variant="success">Success</Label>
         <Label variant="warning">Warning</Label>
         <Label variant="error">Error</Label>
+        <Label variant="primary">Primary</Label>
       </div>
       <div style={{ display: 'flex', gap: 'var(--spacing-space-8)', flexWrap: 'wrap' }}>
         <Label variant="neutral" icon={LocationIcon}>
@@ -36,6 +37,15 @@ export default function Preview() {
         <Label variant="error" icon={LocationIcon}>
           Error
         </Label>
+        <Label variant="primary" icon={LocationIcon}>
+          Primary
+        </Label>
+      </div>
+      <div style={{ display: 'flex', gap: 'var(--spacing-space-8)', flexWrap: 'wrap' }}>
+        <Label variant="primaryDark">Primary Dark</Label>
+        <Label variant="secondaryDark">Secondary Dark</Label>
+        <Label variant="successDark">Success Dark</Label>
+        <Label variant="errorDark">Error Dark</Label>
       </div>
     </div>
   );
@@ -53,6 +63,7 @@ export default function Example() {
         <Label variant="success">Success</Label>
         <Label variant="warning">Warning</Label>
         <Label variant="error">Error</Label>
+        <Label variant="primary">Primary</Label>
       </div>
 
       <div style={{ display: 'flex', gap: 8 }}>
@@ -71,6 +82,17 @@ export default function Example() {
         <Label variant="error" icon={LocationIcon}>
           Error
         </Label>
+        <Label variant="primary" icon={LocationIcon}>
+          Primary
+        </Label>
+      </div>
+
+      {/* Dark variants - meant for use on dark/colored backgrounds */}
+      <div style={{ display: 'flex', gap: 8 }}>
+        <Label variant="primaryDark">Primary Dark</Label>
+        <Label variant="secondaryDark">Secondary Dark</Label>
+        <Label variant="successDark">Success Dark</Label>
+        <Label variant="errorDark">Error Dark</Label>
       </div>
     </>
   );

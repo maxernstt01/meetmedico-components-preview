@@ -20,6 +20,7 @@ export default function Preview() {
       <div style={{ display: 'flex', gap: 'var(--spacing-space-8)' }}>
         <Chip>Default</Chip>
         <Chip icon={ArrowDown01Icon}>Default</Chip>
+        <Chip disabled>Disabled</Chip>
       </div>
       <div style={{ display: 'flex', gap: 'var(--spacing-space-8)' }}>
         <Chip onClick={() => {}}>Normal (hover me)</Chip>
@@ -52,6 +53,7 @@ export default function Example() {
     <>
       <Chip>Default</Chip>
       <Chip icon={ArrowDown01Icon}>Default</Chip>
+      <Chip disabled>Disabled</Chip>
 
       <Chip onClick={() => {}}>Normal (hover me)</Chip>
       {selected ? (

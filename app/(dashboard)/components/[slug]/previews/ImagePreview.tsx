@@ -30,6 +30,45 @@ export default function Preview() {
       <div>
         <Image src="https://picsum.photos/150/150?3" alt="Round photo" width={100} height={100} rounded="full" />
       </div>
+      <div>
+        <Image src="https://picsum.photos/200/150?4" alt="Square corners" width={200} height={150} rounded="none" />
+      </div>
+      <div>
+        <Image src="https://picsum.photos/200/150?5" alt="Small radius" width={200} height={150} rounded="sm" />
+      </div>
+      <div>
+        <Image src="https://picsum.photos/200/150?6" alt="Large radius" width={200} height={150} rounded="lg" />
+      </div>
+      <div>
+        <Image
+          src="https://picsum.photos/300/150?7"
+          alt="Contained wide image"
+          width={200}
+          height={150}
+          rounded="md"
+          fit="contain"
+        />
+      </div>
+      <div>
+        <Image
+          src="https://picsum.photos/300/150?8"
+          alt="Stretched to fill"
+          width={200}
+          height={150}
+          rounded="md"
+          fit="fill"
+        />
+      </div>
+      <div>
+        <Image
+          src="https://picsum.photos/200/150?9"
+          alt="Eagerly loaded scan"
+          width={200}
+          height={150}
+          rounded="md"
+          loading="eager"
+        />
+      </div>
     </div>
   );
 }
@@ -49,6 +88,16 @@ export default function Example() {
 
       {/* rounded: 'none' (default) | 'sm' | 'md' | 'lg' | 'full' */}
       <Image src="/photo.jpg" alt="Round photo" width={100} height={100} rounded="full" />
+      <Image src="/photo-2.jpg" alt="Square corners" width={200} height={150} rounded="none" />
+      <Image src="/photo-3.jpg" alt="Small radius" width={200} height={150} rounded="sm" />
+      <Image src="/photo-4.jpg" alt="Large radius" width={200} height={150} rounded="lg" />
+
+      {/* fit: 'cover' (default) | 'contain' | 'fill'. Maps to CSS object-fit */}
+      <Image src="/wide-photo.jpg" alt="Contained wide image" width={200} height={150} fit="contain" />
+      <Image src="/wide-photo-2.jpg" alt="Stretched to fill" width={200} height={150} fit="fill" />
+
+      {/* loading: 'lazy' (default) | 'eager'. Passed straight through to <img loading> */}
+      <Image src="/scan-3.jpg" alt="Eagerly loaded scan" width={200} height={150} loading="eager" />
     </>
   );
 }`;

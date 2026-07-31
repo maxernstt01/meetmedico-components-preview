@@ -26,6 +26,14 @@ export default function Preview() {
       </div>
 
       <div style={{ border: '1px solid var(--neutral-300)', borderRadius: 'var(--radius-border-radius-8)' }}>
+        <EmptyState preset="serverError" action={<Button variant="primary">Retry</Button>} />
+      </div>
+
+      <div style={{ border: '1px solid var(--neutral-300)', borderRadius: 'var(--radius-border-radius-8)' }}>
+        <EmptyState preset="forbidden" />
+      </div>
+
+      <div style={{ border: '1px solid var(--neutral-300)', borderRadius: 'var(--radius-border-radius-8)' }}>
         <EmptyState
           preset="noData"
           title="No appointments yet"
@@ -47,6 +55,10 @@ export default function Example() {
       <EmptyState preset="noData" action={<Button variant="primary">Retry</Button>} />
 
       <EmptyState preset="notFound" />
+
+      <EmptyState preset="serverError" action={<Button variant="primary">Retry</Button>} />
+
+      <EmptyState preset="forbidden" />
 
       {/* preset supplies the default icon/title/description; any of title,
           description, icon, or action can be overridden individually. */}

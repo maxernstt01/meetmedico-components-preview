@@ -21,8 +21,24 @@ export default function Preview() {
       <Typography variant="label" weight="bold">
         Label text
       </Typography>
+      <Typography variant="labelCaps">Label caps text</Typography>
       <Typography variant="caption" color="var(--neutral-500)">
         Caption text in a muted color
+      </Typography>
+      <Typography variant="body" weight="extrabold">
+        Extrabold weight
+      </Typography>
+      <Typography variant="body" weight="bold">
+        Bold weight
+      </Typography>
+      <Typography variant="body" weight="semibold">
+        Semibold weight
+      </Typography>
+      <Typography variant="body" weight="medium">
+        Medium weight
+      </Typography>
+      <Typography variant="body" weight="regular">
+        Regular weight
       </Typography>
     </div>
   );
@@ -42,9 +58,17 @@ export default function Example() {
       <Typography variant="label" weight="bold">
         Label text
       </Typography>
+      <Typography variant="labelCaps">Label caps text</Typography>
       <Typography variant="caption" color="var(--neutral-500)">
         Caption text in a muted color
       </Typography>
+
+      {/* weight overrides each variant's own default weight - all 5 values */}
+      <Typography variant="body" weight="extrabold">Extrabold weight</Typography>
+      <Typography variant="body" weight="bold">Bold weight</Typography>
+      <Typography variant="body" weight="semibold">Semibold weight</Typography>
+      <Typography variant="body" weight="medium">Medium weight</Typography>
+      <Typography variant="body" weight="regular">Regular weight</Typography>
     </>
   );
 }`;

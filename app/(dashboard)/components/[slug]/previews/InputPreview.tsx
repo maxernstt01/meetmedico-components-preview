@@ -32,6 +32,7 @@ export default function Preview() {
         helperText="Error helper text"
       />
       <Input label="Label" required placeholder="Enter here" size="small" />
+      <Input label="Label" placeholder="Enter here" disabled helperText="This field is disabled" />
     </div>
   );
 }
@@ -72,6 +73,9 @@ export default function Example() {
 
       {/* Small size */}
       <Input label="Label" required placeholder="Enter here" size="small" />
+
+      {/* Disabled */}
+      <Input label="Label" placeholder="Enter here" disabled helperText="This field is disabled" />
     </>
   );
 }`;
