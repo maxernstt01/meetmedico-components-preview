@@ -22,7 +22,12 @@ body {
 }
 
 .topbar {
-  background: var(--primary-50);
+  /* --primary-50 is a translucent tint (5% alpha) - fine when the topbar
+     sat in normal flow with nothing ever visible behind it, but now that
+     it's position: fixed, scrolled content bled through it. This token is
+     a real solid hex in both themes (a similar pale-mint look in light
+     mode), so it fixes that without introducing any non-token color. */
+  background: var(--background-dashboard-background);
   padding: var(--spacing-space-12) var(--spacing-space-24);
   border-bottom: 1px solid var(--neutral-100);
   /* Fixed (not just sticky) so it can slide fully off-screen on scroll-down
