@@ -5,9 +5,29 @@ import Link from 'next/link';
 // design-system's barrel) - same reasoning as every previews/*.tsx file.
 import { Chip } from 'design-system/src/components/Chip/Chip';
 import { Label } from 'design-system/src/components/Label/Label';
+import { Card } from 'design-system/src/components/Card/Card';
 import { Typography } from 'design-system/src/components/Typography/Typography';
 import type { LabelVariant } from 'design-system/src/components/Label/Label.types';
 import type { GlobalStats } from '@/lib/stats';
+
+interface DocLink {
+  title: string;
+  description: string;
+  href: string;
+}
+
+const DOC_LINKS: DocLink[] = [
+  {
+    title: 'How To Import Components',
+    description: 'Below is the documentation for importing the components in standard manner.',
+    href: 'https://docs.google.com/document/d/1B4Ns6wpafRoaOcPEHsW1QQBZvc_9DuyRgmGwf-TvFxY/edit?tab=t.0',
+  },
+  {
+    title: "How To Integrate API's",
+    description: "Below is the documentation for integrating the API's in standard manner.",
+    href: 'https://docs.google.com/document/d/1iUt2bjHp5Tp9zG0lOH7tXYIcIIIHROrKkDzMlmZIhNk/edit?tab=t.0',
+  },
+];
 
 function StatChip({ label, value }: { label: string; value: number }) {
   return (
@@ -68,6 +88,27 @@ export function StatsBar({ stats }: { stats: GlobalStats }) {
             </Link>
           ))}
         </div>
+      </div>
+
+      <div className="doc-cards">
+        {DOC_LINKS.map((doc) => (
+          <Card key={doc.title} variant="elevated" className="doc-cards__card">
+            <Typography as="h3" variant="h4" weight="bold" style={{ display: 'block', marginBottom: 8 }}>
+              {doc.title}
+            </Typography>
+            <Typography
+              as="p"
+              variant="body"
+              color="var(--neutral-600)"
+              style={{ display: 'block', marginBottom: 12 }}
+            >
+              {doc.description}
+            </Typography>
+            <a href={doc.href} target="_blank" rel="noopener noreferrer" className="doc-cards__link">
+              Open Document
+            </a>
+          </Card>
+        ))}
       </div>
     </div>
   );

@@ -26,7 +26,30 @@ const nextConfig = {
       {
         test: /\.svg$/i,
         resourceQuery: /react/,
-        use: ['@svgr/webpack'],
+        use: [
+          {
+            loader: '@svgr/webpack',
+            options: {
+              // SVGO's preset-default includes removeViewBox, which strips
+              // viewBox whenever it exactly matches the source SVG's own
+              // width/height attributes (treating it as "redundant"). That
+              // assumption breaks the moment a consumer resizes the icon via
+              // CSS/props to anything other than its native size - without
+              // viewBox, the browser can't rescale the path coordinates, so
+              // the icon clips instead of scaling. vite-plugin-svgr (used by
+              // MeetMedicoComponent's own dev server) doesn't strip it, so
+              // this was only ever broken here, not in the real component.
+              svgoConfig: {
+                plugins: [
+                  {
+                    name: 'preset-default',
+                    params: { overrides: { removeViewBox: false } },
+                  },
+                ],
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.svg$/i,

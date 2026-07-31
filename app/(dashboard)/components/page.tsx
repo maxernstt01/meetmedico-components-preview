@@ -6,6 +6,7 @@ import { getUsageCount } from '@/lib/introspection/getUsageCount';
 import { getGlobalStats } from '@/lib/stats';
 import { ComponentTabs } from '@/components/ComponentTabs';
 import { StatsBar } from '@/components/StatsBar';
+import { ComponentCard } from '@/components/ComponentCard';
 // Deep-imported straight at Typography's own file (never through
 // design-system's barrel) - same reasoning as every previews/*.tsx file.
 import { Typography } from 'design-system/src/components/Typography/Typography';
@@ -37,18 +38,20 @@ export default function ComponentsIndexPage() {
 
         return (
           <section key={meta.slug} id={meta.slug} className="component-block">
-            <Typography as="h2" variant="h1" weight="bold" style={{ display: 'block', marginBottom: 16 }}>
-              {meta.name}
-            </Typography>
-            <ComponentTabs
-              name={meta.name}
-              PreviewComponent={mod.default}
-              code={mod.CODE}
-              props={props}
-              usage={usage}
-              gitLog={gitLog}
-              tests={tests}
-            />
+            <ComponentCard>
+              <Typography as="h2" variant="h1" weight="bold" style={{ display: 'block', marginBottom: 16 }}>
+                {meta.name}
+              </Typography>
+              <ComponentTabs
+                name={meta.name}
+                PreviewComponent={mod.default}
+                code={mod.CODE}
+                props={props}
+                usage={usage}
+                gitLog={gitLog}
+                tests={tests}
+              />
+            </ComponentCard>
           </section>
         );
       })}
