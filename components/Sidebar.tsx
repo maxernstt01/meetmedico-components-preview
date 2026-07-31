@@ -94,9 +94,20 @@ export function Sidebar() {
             activeKey={activeKey}
             onSelect={(key) => {
               setIsOpen(false);
-              // All components now live on one scrollable page - navigate
-              // there and jump straight to that component's anchor (#slug),
-              // whether we're already on /components or coming from elsewhere.
+              // All components now live on one scrollable page. When we're
+              // already there, scroll to the anchor ourselves - Next's own
+              // hash-scroll-on-navigation isn't guaranteed to respect the
+              // `scroll-behavior: smooth` CSS, so relying on it can silently
+              // snap instantly depending on the Next.js version. Doing it by
+              // hand with scrollIntoView guarantees the smooth animation.
+              if (pathname === '/components') {
+                const target = document.getElementById(key);
+                if (target) {
+                  target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                  window.history.replaceState(null, '', `/components#${key}`);
+                  return;
+                }
+              }
               router.push(`/components#${key}`);
             }}
           />

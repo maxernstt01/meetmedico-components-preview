@@ -2,6 +2,18 @@
   box-sizing: border-box;
 }
 
+html {
+  /* Makes the sidebar's #slug anchor jumps on /components (and any other
+     hash navigation) glide instead of snapping instantly. */
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   margin: 0;
   font-family: var(--font-family-type-family-primary), system-ui, sans-serif;
