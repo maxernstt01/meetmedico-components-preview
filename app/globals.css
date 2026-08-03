@@ -273,6 +273,35 @@ body {
   width: 100%;
 }
 
+.cardsGrid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-space-24);
+}
+
+.cardShowcase {
+  border: 1px solid var(--neutral-100);
+  border-radius: var(--radius-border-radius-8);
+  padding: var(--spacing-space-24);
+  background: var(--background-card-background);
+}
+
+.cardShowcase__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--spacing-space-12);
+  margin-bottom: var(--spacing-space-24);
+  padding-bottom: var(--spacing-space-16);
+  border-bottom: 1px solid var(--neutral-100);
+}
+
+.cardShowcase__body {
+  display: flex;
+  justify-content: center;
+  padding: var(--spacing-space-24) 0;
+}
+
 .welcome {
   min-height: 100vh;
   display: flex;

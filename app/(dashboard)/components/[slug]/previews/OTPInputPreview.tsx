@@ -21,6 +21,7 @@ export default function Preview() {
         helperText="The code you entered is incorrect"
       />
       <OTPInput label="Enter OTP" required size="small" />
+      <OTPInput label="Enter OTP" required length={6} fullWidth />
     </div>
   );
 }
@@ -41,6 +42,8 @@ export default function Example() {
       />
       {/* Small size */}
       <OTPInput label="Enter OTP" required size="small" />
+      {/* fullWidth - stretches the boxes to evenly fill the container */}
+      <OTPInput label="Enter OTP" required length={6} fullWidth />
     </>
   );
 }`;
