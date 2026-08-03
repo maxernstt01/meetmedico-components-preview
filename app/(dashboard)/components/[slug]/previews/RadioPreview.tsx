@@ -20,6 +20,9 @@ export default function Preview() {
         <Radio name="radio-demo-2" label="Disabled" disabled />
         <Radio name="radio-demo-2" label="Disabled, Checked" defaultChecked disabled />
       </div>
+      <div style={{ display: 'flex', gap: 'var(--spacing-space-16)' }}>
+        <Radio name="radio-demo-3" label="Size: small" size="small" defaultChecked />
+      </div>
     </div>
   );
 }
@@ -35,6 +38,9 @@ export default function Example() {
 
       <Radio name="radio-demo-2" label="Disabled" disabled />
       <Radio name="radio-demo-2" label="Disabled, Checked" defaultChecked disabled />
+
+      {/* size: 'normal' (default) | 'small' */}
+      <Radio name="radio-demo-3" label="Size: small" size="small" defaultChecked />
     </>
   );
 }`;

@@ -29,6 +29,7 @@ export default function Preview() {
       <Pagination total={102} defaultCurrent={1} boundaryCount={1} siblingCount={0} />
       <Pagination total={102} defaultCurrent={2} boundaryCount={3} align="center" />
       <Pagination total={102} defaultCurrent={2} boundaryCount={3} align="right" />
+      <Pagination total={102} defaultCurrent={2} boundaryCount={3} size="small" />
     </div>
   );
 }
@@ -59,6 +60,8 @@ export default function Example() {
       {/* align: 'left' (default) | 'center' | 'right' */}
       <Pagination total={102} defaultCurrent={2} boundaryCount={3} align="center" />
       <Pagination total={102} defaultCurrent={2} boundaryCount={3} align="right" />
+      {/* size: 'normal' (default) | 'small' */}
+      <Pagination total={102} defaultCurrent={2} boundaryCount={3} size="small" />
     </>
   );
 }`;

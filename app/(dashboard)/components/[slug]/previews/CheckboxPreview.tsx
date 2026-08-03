@@ -22,6 +22,7 @@ export default function Preview() {
       <Checkbox label="Indeterminate" indeterminate />
       <Checkbox label="Disabled" disabled />
       <Checkbox label="Disabled, Checked (Fill)" variant="fill" defaultChecked disabled />
+      <Checkbox label="Size: small" size="small" defaultChecked />
     </div>
   );
 }
@@ -41,6 +42,9 @@ export default function Example() {
       <Checkbox label="Indeterminate" indeterminate />
       <Checkbox label="Disabled" disabled />
       <Checkbox label="Disabled, Checked (Fill)" variant="fill" defaultChecked disabled />
+
+      {/* size: 'normal' (default) | 'small' */}
+      <Checkbox label="Size: small" size="small" defaultChecked />
     </>
   );
 }`;

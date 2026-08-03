@@ -71,6 +71,9 @@ export default function Preview() {
 
       {/* loading: renders skeleton rows instead of data */}
       <Table columns={sortableColumns} data={data} rowKey="id" pagination={false} loading />
+
+      {/* size: 'normal' (default) | 'small' - denser rows/cells */}
+      <Table columns={sortableColumns} data={data} rowKey="id" pagination={false} size="small" />
     </div>
   );
 }
@@ -140,6 +143,9 @@ export default function Example() {
 
       {/* loading: renders skeleton rows instead of data */}
       <Table columns={sortableColumns} data={data} rowKey="id" pagination={false} loading />
+
+      {/* size: 'normal' (default) | 'small' - denser rows/cells */}
+      <Table columns={sortableColumns} data={data} rowKey="id" pagination={false} size="small" />
     </>
   );
 }`;

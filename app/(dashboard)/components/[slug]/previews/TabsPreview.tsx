@@ -48,6 +48,14 @@ export default function Preview() {
           { value: '2', icon: EyeIcon, ariaLabel: 'Preview' },
         ]}
       />
+
+      <Tabs
+        size="small"
+        items={[
+          { value: '1', label: 'Meet Medico' },
+          { value: '2', label: 'Meet Medico' },
+        ]}
+      />
     </div>
   );
 }
@@ -95,6 +103,15 @@ export default function Example() {
         items={[
           { value: '1', icon: EyeIcon, ariaLabel: 'Preview' },
           { value: '2', icon: EyeIcon, ariaLabel: 'Preview' },
+        ]}
+      />
+
+      {/* size: 'normal' (default) | 'small' */}
+      <Tabs
+        size="small"
+        items={[
+          { value: '1', label: 'Meet Medico' },
+          { value: '2', label: 'Meet Medico' },
         ]}
       />
     </>

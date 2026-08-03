@@ -55,6 +55,8 @@ export default function Preview() {
       <div style={{ height: 220 }}>
         <Steps items={stepsItems} current={1} direction="vertical" />
       </div>
+
+      <Steps items={stepsItems} current={1} size="small" />
     </div>
   );
 }
@@ -111,6 +113,9 @@ export default function Example() {
       <div style={{ height: 220 }}>
         <Steps items={stepsItems} current={1} direction="vertical" />
       </div>
+
+      {/* size: 'normal' (default) | 'small' */}
+      <Steps items={stepsItems} current={1} size="small" />
     </>
   );
 }`;

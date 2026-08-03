@@ -16,6 +16,7 @@ export default function Preview() {
       <Switch label="Active" defaultChecked />
       <Switch label="Disabled" disabled />
       <Switch label="Disabled, Active" defaultChecked disabled />
+      <Switch label="Size: small" size="small" defaultChecked />
     </div>
   );
 }
@@ -29,6 +30,9 @@ export default function Example() {
       <Switch label="Active" defaultChecked />
       <Switch label="Disabled" disabled />
       <Switch label="Disabled, Active" defaultChecked disabled />
+
+      {/* size: 'normal' (default) | 'small' */}
+      <Switch label="Size: small" size="small" defaultChecked />
     </>
   );
 }`;
